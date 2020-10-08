@@ -1,0 +1,43 @@
+
+container md-flex justify-content-center mt-5
+
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    
+}
+
+.col-lg-10 {
+    margin-top: 1rem;
+    padding: 1rem; 
+    background: #eeeeee;
+    
+}
+
+.row {
+    padding: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.answer-item{
+    background: rgb(223, 201, 7);
+    width: 90%;
+    display: inline-block;
+    border-radius:8px;
+    padding: 3px;
+}
+#start-button{
+    border-radius:10px;
+	background:saddlebrown;
+    color:#fff;
+    border-color: black;
+}
+
+#code-title{
+    font-display: ;
+     
+}
