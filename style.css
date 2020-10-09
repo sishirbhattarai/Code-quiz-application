@@ -1,43 +1,71 @@
-
-container md-flex justify-content-center mt-5
-
-
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
 }
 
-.col-lg-10 {
-    margin-top: 1rem;
-    padding: 1rem; 
-    background: #eeeeee;
-    
+.container {
+  margin-top: 5rem;
+  border-style: solid;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 80rem;
+
+
+  
+}
+
+.navbar-brand {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.Count-Down {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.code-title {
+  background-color: grey;
+  padding: 3rem;
+  font-weight: bold;
+}
+.col-lg-12 {
+  margin-top: 0.2rem;
+  padding: 1rem;
+}
+
+.card {
+  border: 0px;
+}
+
+.card-body {
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .row {
-    padding: 1.5rem;
-}
+  padding: 1.5rem;
+  }
 
 p {
-    font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
-.answer-item{
-    background: rgb(223, 201, 7);
-    width: 90%;
-    display: inline-block;
-    border-radius:8px;
-    padding: 3px;
-}
-#start-button{
-    border-radius:10px;
-	background:saddlebrown;
-    color:#fff;
-    border-color: black;
+#btn-start{
+  border-radius: 10px;
+  background: saddlebrown;
+  color: #fff;
+  border-color: black;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  width: 100%;
 }
 
-#code-title{
-    font-display: ;
-     
+.backButton {
+    margin-top: 5rem;
+}
+
+.clearScores {
+    margin-top: 3px;
 }
