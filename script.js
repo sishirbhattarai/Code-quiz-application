@@ -56,3 +56,32 @@ questions[0].choices.forEach(function(choice){
     })
     questionAnswers.append(buttonEl)
 })
+
+/*
+1. start
+- make sure end screen and game screen is hidden
+- add event listner to start button
+  -Needs to hide start screen and show the gamescreen.
+  - Start timer and show current question
+  - If there is no time left, the timer should stop and you should end the game.
+2. game screen
+- Show current question and answer
+  - Each answer when clicked should check if correct answer was selected.
+  - If incorrect decrease the time remaining.
+  - If correct increase score. 
+  - Show next question.
+    - If there are no more questions, end the game.
+  
+3. end screen 
+ - Hide all other screen and show end screen 
+ - Add event listner to initial submit button. SO, when clicked saves the user initials and scores to local storage
+ - redirect users to high score page.
+ 
+
+4. High Scores
+- retrive the list of high scores from local storage and show them on screen.
+- have a link to go back to main page
+
+
+
+*/

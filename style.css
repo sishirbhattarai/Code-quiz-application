@@ -9,10 +9,7 @@ body {
   justify-content: center;
   display: flex;
   margin: 0 auto;
-  max-width: 80rem;
-
-
-  
+  max-width: 80rem; 
 }
 
 .navbar-brand {
