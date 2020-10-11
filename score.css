@@ -1,0 +1,23 @@
+#scoresArea {
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+
+#backButton {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: saddlebrown;
+}
+
+#clearScores {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: saddlebrown;
+}
+
+#highScoresList {
+    font-size: 1.5rem;
+    font-family: cursive;
+}

@@ -1,68 +1,125 @@
-body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  text-align: center;
-}
-
-.container {
-  margin-top: 5rem;
-  border-style: solid;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-  max-width: 80rem; 
-}
-
-.navbar-brand {
-  font-size: 2.2rem;
-  font-weight: bold;
-}
-
-.Count-Down {
-  font-size: 2.2rem;
-  font-weight: bold;
-}
-
-.code-title {
-  background-color: grey;
-  padding: 3rem;
-  font-weight: bold;
-}
-.col-lg-12 {
-  margin-top: 0.2rem;
-  padding: 1rem;
-}
-
 .card {
-  border: 0px;
+    border-style: none;
 }
 
-.card-body {
-  padding: 2rem;
-  margin: 2rem;
+
+.code-title{
+
+font-size: 2.8rem;
+font-weight: bold;
+margin-top: 2rem;
+margin-bottom: 3rem;
+text-align: center;
+margin-left: 15rem;
+border: solid;
+background-color:saddlebrown;
+color: white;
+padding: 0.15rem;
 }
 
-.row {
-  padding: 1.5rem;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Bradley Hand, cursive;
   }
 
-p {
-  font-size: 1.8rem;
-}
+  .timer-box{
+      float: right;
+      text-align-last: justify;
+      font-weight: bold;
+      border:3px; 
+      border-style:solid; 
+      border-color:black; 
+      padding: 0.5rem;
+      background-color: grey;
+      color: purple;
+  }
 
-#btn-start{
-  border-radius: 10px;
-  background: saddlebrown;
-  color: #fff;
-  border-color: black;
-  padding: 0.75rem;
-  font-size: 1.5rem;
-  width: 100%;
-}
+  p {
+      font-size: 1.5rem;
+      text-align: center;
+      color:purple;
 
-.backButton {
+  }
+
+  .container {
     margin-top: 5rem;
-}
+        
+  }
 
-.clearScores {
-    margin-top: 3px;
-}
+  #btn-start{
+    border-radius: 10px;
+    background: saddlebrown;
+    color: #fff;
+    border-color: black;
+    padding: 0.55rem;
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 3rem;
+
+  }
+
+ #title-item {
+
+font-size: 3rem;
+font-weight: bold;
+background-color: black;
+
+ }
+
+
+ #question-answers {
+     color: brown;
+     font-size: 1.65rem;
+    
+ }
+
+ .btn-primary {
+     background-color: saddlebrown;
+ }
+
+ #btnScore {
+
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: saddlebrown;
+    color: white;
+    
+ }
+
+ .form-control{
+     padding: 1.5rem;
+     font-size: 2rem;
+ }
+
+ #btn-start:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 brown(8, 114, 244, 0.6);
+    transition: transform 150ms;
+    transform: scale(1.03);
+    color: greenyellow;
+ }
+
+ .btn-primary:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 (6, 103, 247, 0.5);
+    transform: scale(1.22);
+    transform: transform 100ms;
+    background-color: black;
+ }
+
+ .answers {
+     margin-top: 2.5rem;
+     font-size: 1rem;
+ }
+
+ .text {
+     color: greenyellow;
+ }
+
+
+
+
+
+
