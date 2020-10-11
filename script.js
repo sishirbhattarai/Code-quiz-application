@@ -62,8 +62,10 @@ function starQuiz(){
     document.getElementsByClassName("code-title")[0].style.visibility = "hidden";
     document.getElementsByClassName("col-lg-11")[0].style.visibility = "hidden";
     document.getElementsByClassName("btnstart")[0].style.visibility = "hidden";
+
     quizQuestions.classList.remove("d-none")
     document.getElementById("title-item").textContent = questions[0].question
+
 
     console.log("I am cool")
     nextQuestions= questions[currentindex]
@@ -71,7 +73,7 @@ function starQuiz(){
     
         displayQuestion(nextQuestions)
 
-    gametime()
+    tracktime()
 
     if(storedScores !==null) {
         allScores = storedScores;
@@ -84,7 +86,7 @@ btnScore.addEventListener("click" , function(){
 });
 // Time set
 
-function gametime(){
+function tracktime(){
 
     var timeinterval = setInterval(function(){
         timer.innerText = count
@@ -105,8 +107,10 @@ function scorePage(a, b) {
     location.href = "score.html";
 }
 
+
 function displayQuestion(question){
     titleitem.innerText=question.title
+   
     question.choices.forEach(element => {
      var button =document.createElement("button")
     button.className="btn-primary btn-block text-left"
@@ -132,7 +136,7 @@ function displaynextQuestion(e){
         }
 
     }else{
-        console.log("endgame")
+        console.log("you are done")
         endgame()
         
 

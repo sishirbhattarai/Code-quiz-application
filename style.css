@@ -45,6 +45,7 @@ padding: 0.15rem;
 
   .container {
     margin-top: 5rem;
+    box-shadow: 0 0 10px02px;
         
   }
 
@@ -109,7 +110,7 @@ background-color: black;
     background-color: black;
  }
 
- .answers {
+ .answers-buttons {
      margin-top: 2.5rem;
      font-size: 1rem;
  }
