@@ -1,6 +1,6 @@
 var myScore = document.getElementById("score");
 var btnScore = document.getElementById("btnScore");
-var currentindex = 0;
+var currentQuestionIndex = 0;
 var score = 0;
 var count = 120;
 var alert =document.getElementById("alert");
@@ -8,16 +8,15 @@ var info = document.getElementById("info");
 var quizQuestions = document.getElementById("quiz-questions");
 var timer = document.getElementById("timer");
 var btnStart = document.getElementById("btn-start");
-var timecounter = document.getElementById("timecounter");
+var timeCounter = document.getElementById("timecounter");
 var titleitem = document.getElementById("title-item");
 var nextQuestions
 var questionanswers = document.getElementById("question-answers");
 const MAX_QUESTIONS = 7
 
-// var addscore = document.getElementById("addscore");
-// var submitresult = document.getElementById("submitresult");
+
 var allScores = [];
-var storedScores = JSON.parse(localStorage.getItem("userData"));
+var storedScores = JSON.parse(localStorage.getItem("Data"));
 var questions = [
     {
         title: '1. How to empty an array in JavaScript?',
@@ -56,37 +55,33 @@ var questions = [
      }
 
 ]
-btnStart.addEventListener("click", starQuiz);
-function starQuiz(){
+btnStart.addEventListener("click", quizStart);
+/*Below are the things I need to execute once button is clicked*/
+
+function quizStart(){
     
     document.getElementsByClassName("code-title")[0].style.visibility = "hidden";
     document.getElementsByClassName("col-lg-11")[0].style.visibility = "hidden";
     document.getElementsByClassName("btnstart")[0].style.visibility = "hidden";
-
     quizQuestions.classList.remove("d-none")
-    document.getElementById("title-item").textContent = questions[0].question
+    
 
-
+    /*Console log for debuging*/
     console.log("I am cool")
-    nextQuestions= questions[currentindex]
-    
-    
-        displayQuestion(nextQuestions)
 
-    tracktime()
+    nextQuestions= questions[currentQuestionIndex]
+            showQuestion(nextQuestions)
+
+    timertracker()
 
     if(storedScores !==null) {
         allScores = storedScores;
     }
-  
-}
-btnScore.addEventListener("click" , function(){
-    let name = document.getElementById("inputScore").value
-    scorePage(name, count)
-});
+  }
+
 // Time set
 
-function tracktime(){
+function timertracker(){
 
     var timeinterval = setInterval(function(){
         timer.innerText = count
@@ -97,18 +92,18 @@ function tracktime(){
 
 function scorePage(a, b) {
 
-    var userData = {
+    var Data = {
         inits: a,
         userScore: b
     };
-    allScores.push(userData);
+    allScores.push(Data);
 
-    localStorage.setItem("userData", JSON.stringify(allScores));
+    localStorage.setItem("Data", JSON.stringify(allScores));
     location.href = "score.html";
 }
 
 
-function displayQuestion(question){
+function showQuestion(question){
     titleitem.innerText=question.title
    
     question.choices.forEach(element => {
@@ -117,22 +112,22 @@ function displayQuestion(question){
     button.innerText=element
     // questionanswers.innerHTML=""
     questionanswers.appendChild(button)
-    button.addEventListener("click", displaynextQuestion)
+    button.addEventListener("click", showNextQuestion)
     });
 }
 
 
-function displaynextQuestion(e){
-    currentindex++
-    if(currentindex < questions.length){
-        correction(e.target.innerText == nextQuestions.answer)
+function showNextQuestion(e){
+    currentQuestionIndex++
+    if(currentQuestionIndex < questions.length){
+        correct(e.target.innerText == nextQuestions.answer)
         questionanswers.innerHTML=""
-        if(currentindex < questions.length){    
-            nextQuestions= questions[currentindex]
-            displayQuestion(nextQuestions)  
+        if(currentQuestionIndex < questions.length){    
+            nextQuestions= questions[currentQuestionIndex]
+            showQuestion(nextQuestions)  
         }else {
-            currentindex = 0
-            displayQuestion(nextQuestions)  
+            currentQuestionIndex = 0
+            showQuestion(nextQuestions)  
         }
 
     }else{
@@ -140,11 +135,15 @@ function displaynextQuestion(e){
         endgame()
         
 
-    }
-    
-     
+    }    
 }
-function correction(response){
+
+btnScore.addEventListener("click" , function(){
+    let name = document.getElementById("inputScore").value
+    scorePage(name, count)
+});
+
+function correct(response){
     
     if(response){
         alert.innerText= "Yay!! You are right"
@@ -166,7 +165,7 @@ function correction(response){
     // btnStart.classList.add("d-none")
     myScore.innaText = count
     scoreadd.classList.remove("d-none")
-    timecounter.classList.add("d-none")
+    timeCounter.classList.add("d-none")
     quizQuestions.classList.add("d-none")
     
 
