@@ -145,19 +145,19 @@ function showNextQuestion(e) {
 
 function done() {
   console.log("you are done");
-
+  localStorage.setItem("tmp-score", count)
   location.href = "submitbutton.html";
 
-  scorePage(a, b);
+  // scorePage(a, b);
 
-  endgame();
+  // endgame();
 }
 if (btnScore) {
   btnScore.addEventListener("click", submitQuiz);
 }
 function submitQuiz() {
   let name = document.getElementById("inputScore").value;
-  scorePage(name, count);
+  scorePage(name, localStorage.getItem("tmp-score"));
 }
 
 /*
