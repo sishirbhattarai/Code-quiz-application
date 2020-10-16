@@ -102,10 +102,10 @@ function timertracker() {
   }, 1000);
 }
 
-function scorePage(a, b) {
+function scorePage(initials, score) {
   var Data = {
-    inits: a,
-    userScore: b,
+    inits: initials,
+    userScore: score,
   };
   storedScores.push(Data);
 
