@@ -107,23 +107,24 @@ function scorePage(a, b) {
     inits: a,
     userScore: b,
   };
-  allScores.push(Data);
+  storedScores.push(Data);
 
-  localStorage.setItem("Data", JSON.stringify(allScores));
+  localStorage.setItem("Data", JSON.stringify(storedScores));
+  console.log(localStorage);
   location.href = "score.html";
 }
 
 function showQuestion(question) {
   titleitem.innerText = question.title;
 
-  question.choices.forEach((element) => {
+  for (var choice of question.choices) {
     var button = document.createElement("button");
     button.className = "btn-primary btn-block text-left";
-    button.innerText = element;
+    button.innerText = choice;
     // questionanswers.innerHTML=""
     questionanswers.appendChild(button);
     button.addEventListener("click", showNextQuestion);
-  });
+  }
 }
 
 function showNextQuestion(e) {
@@ -145,13 +146,10 @@ function showNextQuestion(e) {
 
 function done() {
   console.log("you are done");
-  localStorage.setItem("tmp-score", count)
+  localStorage.setItem("tmp-score", count);
   location.href = "submitbutton.html";
-
-  // scorePage(a, b);
-
-  // endgame();
 }
+
 if (btnScore) {
   btnScore.addEventListener("click", submitQuiz);
 }
@@ -160,13 +158,6 @@ function submitQuiz() {
   scorePage(name, localStorage.getItem("tmp-score"));
 }
 
-/*
-btnScore.addEventListener("click" , function(){
-    let name = document.getElementById("inputScore").value
-    scorePage(name, count)
-    
-});
-*/
 function correct(response) {
   if (response) {
     alert.innerText = "Yay!! You are right";
@@ -180,7 +171,6 @@ function correct(response) {
   }, 1000);
 }
 function endgame() {
-  // btnStart.classList.add("d-none")
   myScore.innaText = count;
   scoreadd.classList.remove("d-none");
   timeCounter.classList.add("d-none");
