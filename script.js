@@ -107,9 +107,10 @@ function scorePage(initials, score) {
     inits: initials,
     userScore: score,
   };
-  storedScores.push(Data);
+  allScores.push(Data);
+  //storedScores.push(Data);
 
-  localStorage.setItem("Data", JSON.stringify(storedScores));
+  localStorage.setItem("Data", JSON.stringify(allScores));
   console.log(localStorage);
   location.href = "score.html";
 }
@@ -147,7 +148,9 @@ function showNextQuestion(e) {
 function done() {
   console.log("you are done");
   localStorage.setItem("tmp-score", count);
-  location.href = "submitbutton.html";
+    location.href = "submitbutton.html";
+
+  console.log(scorePage);
 }
 
 if (btnScore) {
@@ -156,6 +159,7 @@ if (btnScore) {
 function submitQuiz() {
   let name = document.getElementById("inputScore").value;
   scorePage(name, localStorage.getItem("tmp-score"));
+  
 }
 
 function correct(response) {
